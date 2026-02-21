@@ -6,34 +6,28 @@ from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 
 # ==========================================
-# 👇 STRICT CONFIGURATION (Education Mode) 👇
+# 🚨 STRICT CONFIGURATION (Nature & Blogs Mode) 🚨
 # ==========================================
 
-TOPIC_NAME = "Education_Motivation"
+TOPIC_NAME = "Nature_Vlogs"
 
 CONFIG = {
-    # 1. Category Setting (STRICTLY Education)
-    "category_id": "27",  
+    # 1. Category Setting (22 is for People & Blogs)
+    "category_id": "22",  
     
-    # 2. AI Prompts (No Stars, No Hashtags in text)
-    "title_prompt": "Write a short viral science or fact-based video title in English under 60 characters.No hashtags. No quotes. No emoji.",
-    "desc_prompt": "Write a deep, educational and inspiring explanation (max 2 sentences) about the importance of success and learning. Plain text only. No stars. No hashtags inside text.",
+    # 2. AI Prompts (Nature related)
+    "title_prompt": "Write a short, beautiful nature or travel video title in English under 60 characters. No hashtags. No quotes. No emoji.",
+    "desc_prompt": "Write a calming and engaging description (max 2 sentences) about the beauty of nature, exploring the outdoors, or daily life. Plain text only. No stars. No hashtags inside text.",
     
-    # 3. SEO Settings (Science & Tech - USA Targeting)
-    "seo_hashtags": "#science #sciencevideo #learning #knowledge #sciencefacts #spacefacts #innovation #research #technology #scientificmind #stemeducation #physicsfacts #biologyfacts #chemistryfacts #dailyscience #curiosity #futuretech #scienceexplained #scienceshorts #ytshorts #Science #STEM #Learning #Discovery #SpaceScience #Innovation #Shorts #Facts #Science #ScienceVideo #Facts #Discovery #Knowledge #Learning #SpaceFacts #STEM #ScientificMind #PhysicsFacts #BiologyFacts #ChemistryFacts #Research #USA #USAScience #ViralUSA #EnglishContent #GlobalScience",
+    # 3. SEO Settings (Nature & Blogs Targeting)
+    "seo_hashtags": "#nature #naturelovers #peopleandblogs #dailyvlog #naturephotography #wildlife #travelvlog #explore #scenery #naturevideo #vlog #beautifulnature #peaceful #outdoors #viralnature #ytshorts #Shorts",
     
     # 4. Tags List (Exact Mirror of Hashtags)
     "tags": [
-        "science", "sciencevideo", "learning", "knowledge", "sciencefacts", 
-        "spacefacts", "innovation", "research", "technology", "scientificmind", 
-        "stemeducation", "physicsfacts", "biologyfacts", "chemistryfacts", 
-        "dailyscience", "curiosity", "futuretech", "scienceexplained", 
-        "scienceshorts", "ytshorts", "Science", "STEM", "Learning", 
-        "Discovery", "SpaceScience", "Innovation", "Shorts", "Facts", 
-        "Science", "ScienceVideo", "Facts", "Discovery", "Knowledge", 
-        "Learning", "SpaceFacts", "STEM", "ScientificMind", "PhysicsFacts", 
-        "BiologyFacts", "ChemistryFacts", "Research", "USA", "USAScience", 
-        "ViralUSA", "EnglishContent", "GlobalScience"
+        "nature", "naturelovers", "peopleandblogs", "dailyvlog", 
+        "naturephotography", "wildlife", "travelvlog", "explore", 
+        "scenery", "naturevideo", "vlog", "beautifulnature", 
+        "peaceful", "outdoors", "viralnature", "ytshorts", "Shorts"
     ]
 }
 
@@ -119,7 +113,7 @@ def send_telegram_alert(video_id, channel_name):
     message = (
         f"{formatted_name}\n"
         f"Message: Upload Successful\n"
-        f"Category: Education\n"
+        f"Category: People & Blogs\n"
         f"{video_link}"
     )
     
